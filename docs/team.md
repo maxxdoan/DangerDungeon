@@ -12,5 +12,5 @@ title:  Team
 ## USER 2
 ***UCI Net ID***: kardip
 
-## USER 3
+## Kelly Payne
 ***UCI Net ID***: kspayne
