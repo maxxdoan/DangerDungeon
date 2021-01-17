@@ -6,7 +6,7 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## Max Doan
 ***UCI Net ID***: qddoan
 
 ## USER 2
