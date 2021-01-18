@@ -15,4 +15,4 @@ We make our agent smart we will implement Reinforcement Learning algorithms like
 The first, and most important metric will be accuracy. We can easily measure this by running 1000+ trials and calculate the successful percentage. We will probably start with extremely easy cases which is let our agent tries to avoid a trap with only one wire.
 
 ## 4. Appointment with the Instructor
-Tuesday, January 19 at 11:45AM
+Tuesday, January 19 2021 at 11:45AM
