@@ -10,3 +10,6 @@ Our project will involve training an agent to navigate a environment filled with
 ## 2. AI/ML Algorithms
 
 We make our agent smart we will implement Reinforcement Learning algorithms like Q-learning in order for our agent to learn how to successful traverse the environment in front of them.
+
+## 4. Appointment with the Instructor
+Tuesday, January 19 at 11:45AM
