@@ -1,4 +1,4 @@
 ---
-2 layout: default
-3 title: Proposal
-4 ---
+layout: default
+title: Proposal
+---
