@@ -5,14 +5,17 @@ title: Proposal
 
 ## 1. Summary of the Project
 
-Our project will involve training an agent to navigate a environment filled with dangerous tripwire traps. It will be the agent's goal to navigate the environment safetly which will involve jumping over the tripwire traps as necessary to escape. Using Malmo along with some Reincorcment Learning algorithms the agent will take in the environment as input and will produce a traversal of the environment (successful or unsuccessful).
+Our project will involve training an agent to navigate a environment filled with dangerous tripwire traps. It will be the agent's goal to navigate the environment safely which will involve jumping over the tripwire traps as necessary to escape. Using Malmo along with some Reinforcement Learning algorithms the agent will take in the environment as input and will produce a traversal of the environment (successful or unsuccessful).
 
 ## 2. AI/ML Algorithms
 
 We make our agent smart we will implement Reinforcement Learning algorithms like Q-learning in order for our agent to learn how to successful traverse the environment in front of them.
 
 ## 3. Evaluation Plan
-The first, and most important metric will be accuracy. We can easily measure this by running 1000+ trials and calculate the successful percentage. We will probably start with extremely easy cases which is let our agent tries to avoid a trap with only one wire.
+
+Our project success will be based upon observing how well our AI minecraft agent is able to avoid tripwire traps. Therefore, the most important metric would be accuracy. The quantitive analysis on measuring accuracy would be by caluclating the success rate of our AI being able to avoid the trapwires presented on a constant environment. The data will be gathered through running 1000+ trials of a constant environment with various numbers of trapwires. The qualitative analysis that we will observed is on whether or not our AI agent can at the very least avoid a trap with only one wire. [WHAT SHOULD WE RIGHT HERE?] Our moonshoot case would be to create an AI agent that will find the shortest path with the least number of trapwires to escape ...? 
+
+
 
 ## 4. Appointment with the Instructor
 Tuesday, January 19 2021 at 11:45AM
