@@ -24,4 +24,4 @@ Tuesday, January 19 2021 at 11:45AM
 Our group will meet every week on Wednesday 9pm PST.
 
 ## 6. Status Report Objectives:
-For our status report, we hope to have a working version of our agent traversing a course with one or two points of interest. These points of interest are where the agent must learn how to intelligently interact with traps that may help or hurt the agents chances of reaching the goal.
+For our status report, we hope to have a working version of our agent traversing a course with one or two points of interest. These points of interest are where the agent must learn how to intelligently interact with traps that may help or hurt the agent's chances of reaching the goal.
