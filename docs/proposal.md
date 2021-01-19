@@ -16,3 +16,6 @@ The first, and most important metric will be accuracy. We can easily measure thi
 
 ## 4. Appointment with the Instructor
 Tuesday, January 19 2021 at 11:45AM
+
+## 5. Weekly Group Meeting Time
+Our group will meet every week on Wednesday 9pm PST.
