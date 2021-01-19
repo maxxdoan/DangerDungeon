@@ -9,7 +9,7 @@ title:  Team
 ## Max Doan
 ***UCI Net ID***: qddoan
 
-## USER 2
+## Pande Made Amarysti Kardi
 ***UCI Net ID***: kardip
 
 ## Kelly Payne
