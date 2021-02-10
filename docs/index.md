@@ -4,6 +4,8 @@ title:  Home
 ---
 
 Source code: https://github.com/maxxdoan/DangerDungeon
+
+## Welcome 
 Welcome to our Danger Dungeon Project Page, this is a project for CS 175 - Project in AI (In Minecraft). 
 In this project, we apply reinforment learning algorithms to teach our AI agent how to navigate through an obstacle course.
 
