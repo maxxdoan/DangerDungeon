@@ -10,7 +10,7 @@ Our project will involve training an agent to navigate a environment filled with
 
 ## 2. Approach
 We have the agent traverses an obstacle course. We design 2 separate experiment. The first experiment is the agent would be place in a big environment and could perform 3 actions: moving, jumping and turning. The second experiment is the agent would be place in a smaller environment and  could only perform 2 actions: moving and jumping.
-![Alt Text](https://drive.google.com/file/d/1IkCrC0oMxHuqQyRHcOl7We9Lj9jEK5lC/view?usp=sharing)
+![Text](/Downloads/DangerDugeon.jpg)
 
 ## 3. Evaluation
 
