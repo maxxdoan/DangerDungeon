@@ -13,7 +13,11 @@ Our project will involve training an agent to navigate a environment filled with
 <br>
 We have the agent traverses an obstacle course. The goal is for the agent to safely cross the lave river and reach the emerald on the other side of the course.
 <br>
-We design 2 separate experiment. The first experiment is the agent would be place in a big environment and could perform 3 actions: moving, jumping and turning. The second experiment is the agent would be place in a smaller environment and  could only perform 2 actions: moving and jumping.
+We design 2 separate experiment:
+<br>
+In the first experiment, the agent would be place in a big environment and could perform 3 actions: moving, jumping and turning. 
+<br>
+In the second experiment, the agent would be place in a smaller environment and could only perform 2 actions: moving and jumping.
 
 ![Alt Text](../DangerDungeon.jpg)
 
@@ -29,10 +33,11 @@ Second Experiment - Bigger Room with Turning:
 <br>
 We took away the turning ability and placed the agent in a smaller environment. The agent managed to get more reward this time.
 <br>
-## Reward Graph
+
 ![Alt Text](../RewardGraph.jpg) 
 
 
 ## 4. Remaining Goals and Challenges
 
 ## 5. Resources Used
+1. We used Homework 2 Template as a skeleton for our reinforcement learning algorithm
