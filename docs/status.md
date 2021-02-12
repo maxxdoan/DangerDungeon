@@ -11,8 +11,10 @@ Our project will involve training an agent to navigate a environment filled with
 
 ## 2. Approach
 <br>
-We have the agent traverses an obstacle course. We design 2 separate experiment. The first experiment is the agent would be place in a big environment and could perform 3 actions: moving, jumping and turning. The second experiment is the agent would be place in a smaller environment and  could only perform 2 actions: moving and jumping.
+We have the agent traverses an obstacle course. The goal is for the agent to safely cross the lave river and reach the emerald on the other side of the course.
 <br>
+We design 2 separate experiment. The first experiment is the agent would be place in a big environment and could perform 3 actions: moving, jumping and turning. The second experiment is the agent would be place in a smaller environment and  could only perform 2 actions: moving and jumping.
+
 ![Alt Text](../DangerDungeon.jpg)
 
 
