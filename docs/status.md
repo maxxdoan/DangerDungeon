@@ -38,6 +38,9 @@ We took away the turning ability and placed the agent in a smaller environment. 
 
 
 ## 4. Remaining Goals and Challenges
+Moving forward with this project we want to take some of the complexity out of the action space (continuous for our status report) and invest it into our map structure. We believe our agent's learning was hindered by the continuous action space's complexity, so for the final project we are going to switch back to discrete actions. In order to make our final experiments fun and interesting, we are going to create maps that dynamically change based on the actions our agent makes. Pressure plates, redstone, and pistons all allow for moving parts within the map. This will allow us to block off existing paths and create new ones that the agent will have to take into account during the learning process.
+
+We also had trouble with our reward system. Our status report model only awarded reward at the end of the mission's duration instead of incrementally throughout the mission's lifetime. We believe this also contributed to our agent's learning difficulty. For our final project, we are going to include reward checkpoints in the map to give the agent a better idea of what is a positive action or a negative action.
 
 ## 5. Resources Used
-1. We used Homework 2 Template as a skeleton for our reinforcement learning algorithm
+We used Homework 2's code template as a skeleton for our reinforcement learning algorithm and modified the action and observation spaces to create our new enviroment and experiments. Our maps were created from scratch in the minecraft cilent and we imported it into our project using the appropriate XML tools.
