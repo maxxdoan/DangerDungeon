@@ -1,4 +1,5 @@
 # Rllib docs: https://docs.ray.io/en/latest/rllib.html
+#<Reward reward="'''+str(self.last_obs[0]*50)+'''" description="found_goal"/>
 
 try:
     from malmo import MalmoPython
@@ -29,8 +30,8 @@ class DiamondCollector(gym.Env):
         self.log_frequency = 10
         self.action_dict = {
             0: 'move 1',  # Move one block forward
-            1: 'strafe -1',  # Jump o:
-            2: 'strafe 1',  # Turn 90 degrees to the right
+            1: 'strafe -1',  # strafe to the left
+            2: 'strafe 1',  # strafe to the right
             #3: 'turn -1',  # Turn 90 degrees to the left
         }
 
@@ -120,6 +121,8 @@ class DiamondCollector(gym.Env):
 
         # Get Reward
         reward = 0
+        if command == 'move 1':
+            reward += 1
         for r in world_state.rewards:
             reward += r.getValue()
         self.episode_return += reward
@@ -132,7 +135,7 @@ class DiamondCollector(gym.Env):
                 <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
                     <About>
-                        <Summary>Status Report</Summary>
+                        <Summary>Final Report</Summary>
                     </About>
 
                     <ServerSection>
@@ -150,6 +153,10 @@ class DiamondCollector(gym.Env):
                                 "<DrawCuboid x1='-648' x2='-648' y1='4' y2='4' z1='-89' z2='-85' type='lava'/>" + \
                                 "<DrawCuboid x1='-640' x2='-640' y1='3' y2='3' z1='-89' z2='-85' type='stone'/>" + \
                                 "<DrawCuboid x1='-640' x2='-640' y1='4' y2='4' z1='-89' z2='-85' type='lava'/>" + \
+                                "<DrawCuboid x1='-648' x2='-648' y1='3' y2='3' z1='-95' z2='-91' type='stone'/>" + \
+                                "<DrawCuboid x1='-648' x2='-648' y1='4' y2='4' z1='-95' z2='-91' type='lava'/>" + \
+                                "<DrawCuboid x1='-640' x2='-640' y1='3' y2='3' z1='-95' z2='-91' type='stone'/>" + \
+                                "<DrawCuboid x1='-640' x2='-640' y1='4' y2='4' z1='-95' z2='-91' type='lava'/>" + \
                                 '''
                             </DrawingDecorator>
                             <ServerQuitWhenAnyAgentFinishes/>
@@ -157,7 +164,7 @@ class DiamondCollector(gym.Env):
                     </ServerSection>
 
                     <AgentSection mode="Survival">
-                        <Name>CS175StatusReport</Name>
+                        <Name>CS175FinalReport</Name>
                         <AgentStart>
                             <Placement x="-655.5" y="5" z="-89.5" pitch="30" yaw="270"/>
                             <Inventory>
@@ -165,9 +172,6 @@ class DiamondCollector(gym.Env):
                             </Inventory>
                         </AgentStart>
                         <AgentHandlers>
-                            <RewardForMissionEnd rewardForDeath="-10">
-                                <Reward reward="'''+str(self.last_obs[0]*50)+'''" description="found_goal"/>
-                            </RewardForMissionEnd>
                             <DiscreteMovementCommands/>
                             <ObservationFromFullStats/>
                             <ObservationFromRay/>
@@ -237,7 +241,7 @@ class DiamondCollector(gym.Env):
                 msg = world_state.observations[-1].text
                 observations = json.loads(msg)
 
-                # New Observation (status report)
+                # New Observation (final report)
                 obs[0] = (-observations['XPos'] - self.xstart) / (self.xend - self.xstart)
                 obs[1] = 0.0 # might not need this
                 obs[2] = (-observations['ZPos'] - self.zstart) / (self.zend - self.zstart)
@@ -277,7 +281,7 @@ class DiamondCollector(gym.Env):
         returns_smooth = np.convolve(self.returns[1:], box, mode='same')
         plt.clf()
         plt.plot(self.steps[1:], returns_smooth)
-        plt.title('Status Report')
+        plt.title('Final Report')
         plt.ylabel('Return')
         plt.xlabel('Steps')
         plt.savefig('returns.png')
