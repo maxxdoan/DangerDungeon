@@ -9,8 +9,7 @@ title:  Team
 ## Max Doan
 ***UCI Net ID***: qddoan
 
-## USER 2
-***UCI Net ID***: kardip
+![](MaxAvatar.png)
 
 ## Kelly Payne
 ***UCI Net ID***: kspayne
