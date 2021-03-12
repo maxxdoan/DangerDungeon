@@ -21,7 +21,7 @@ In the first experiment, the agent would be place in a big environment and could
 <br>
 In the second experiment, the agent would be place in a smaller environment and could only perform 2 actions: moving and jumping.
 
-![](DangerDungeon.jpg)
+![](DangerDungeon.png)
 
 
 ## 3. Evaluation
@@ -35,7 +35,7 @@ Second Experiment - Bigger Room with Turning:
 <br>
 We took away the turning ability and placed the agent in a smaller environment. The agent managed to get more reward this time.
 <br>
-![](RewardGraph.jpg)
+![](RewardGraph.png)
 
 
 ## 4. Remaining Goals and Challenges
