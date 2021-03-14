@@ -8,16 +8,16 @@ title: Final Report
 ## Project Summary
 Our project will involve training an agent to navigate a environment filled with dangerous traps and obstacles to overcome. The agent's goal is safely walk through an environment fills with hot lava and numerous traps. For this project, we designed 4 different maps.
 
-**Figure 1 - Map 1
+### Figure 1 - Map 1
 ![](map1.png)
 
-**Figure 2 - Map 2
+### Figure 2 - Map 2
 ![](map2.png)
 
-**Figure 3 - Map 3
+### Figure 3 - Map 3
 ![](map3.png)
 
-**Figure 3 - Map 3
+### Figure 3 - Map 3
 ![](map4.png)
 
 The agent only allow 3 actions, go forward, strafe left and strafe right. Using Malmo along with some Reinforcement Learning algorithms the agent will take in a state which includes the agent's current position in (x, y, z) format and the agent's yaw (the direction the agent is facing). The agent's reward for any one mission will be depend on how close the agent was to the goal location by the end of mission's running time. The action space will be continuous and include the following actions: moving forward, turning, and use pressure plate to travel through hot lava.
