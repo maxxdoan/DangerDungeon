@@ -48,18 +48,19 @@ Change back to discrete from continous and the removal of walking backward
 
 ## Evaluation
 ### Quantitative Evaluation
-The agent will receive one point each time he is one step closer to the goal, and if he falls into the lava, he will die immediately and consequently fail the misson. The experiment will be conduct by letting the agent finds his way through 4 different maps, which is chosen randomly. 
-- For the first experiment with only one map, we can see that the agent learned much more faster and more effectively. 
-- For the second experiment with 4 maps chosen at randomly, we can see a slight increase in reaward overtime but the agent learn much slower and less effectively.
+The agent will receive one point each time he is one step closer to the goal, and if he falls into the lava, he will die immediately and consequently fail the misson. The experiment will be conducted by letting the agent finds his way through 4 different maps, which are chosen randomly each mission. 
+- For the first experiment with only one map, we can see that the agent learned more about what he should be doing and learned in a faster fashion. 
+- For the second experiment with 4 maps chosen at randomly, we can see a slight increase in reaward overtime but the agent learned much slower and less effectively overall.
 
 Result Graph
 ![](finalGraph.png)
 
 ### Qualitative Evaluation
+Overall, with enough training time the agent in both experiments were able to reach points closer to the goal compared to when they started their training. For the single map experiment specifically, the agent had some streaks of being able to make it to the goal decently consistently. However, even at these later stages of training, the agent was still prone to making mistakes at all stages of the mission. This was the best result we were able to achieve with our current environment setup. Our dream for this final project was to try to train our agent on multiple dynamic environments. This is why we created the variations of the original dynamic environment to rotate through while training our agent. Unfortunately the agent had a much harder time training in these circumstances for more than one reason. The obvious reason is that its harder for the agent to learn if the map changes between missions. The second reason is a more technical reason. We noticed that Malmo takes a decent amount of time loading up a map that is different from the map used in the previous mission. We believe this is because Malmo can only keep a single map in its "memory" at a time which makes constantly switching maps a decently large time cost.
 
 ## References
 - Project Malmo - https://microsoft.github.io/malmo/0.14.0/Documentation/classmalmo_1_1_agent_host.html#ac1421c4ed9ababff1300ea58a37859bc
 - UCI CS 175 HW2 Template
 - Malmo Platform Tutorial - https://microsoft.github.io/malmo/0.17.0/Python_Examples/Tutorial.pdf
 - XML Schema Documentation - https://microsoft.github.io/malmo/0.30.0/Schemas/MissionHandlers.html#SchemaProperties
-- Index page Minecraft Image - https://images-ext-2.discordapp.net/external/6BF6DzNVG143Fw7lkTALGRoUZasb8HKdEt1zrF1kxHo/https/cdn.mos.cms.futurecdn.net/m3WrriWje4hvzFBpALojFm-970-80.jpg.webp
+- Index page Minecraft Image - https://images9.gry-online.pl/galeria/galeria_duze3/396263203.jpg
