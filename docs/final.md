@@ -58,3 +58,8 @@ Result Graph
 ### Qualitative Evaluation
 
 ## References
+- Project Malmo - https://microsoft.github.io/malmo/0.14.0/Documentation/classmalmo_1_1_agent_host.html#ac1421c4ed9ababff1300ea58a37859bc
+- UCI CS 175 HW2 Template
+- Malmo Platform Tutorial - https://microsoft.github.io/malmo/0.17.0/Python_Examples/Tutorial.pdf
+- XML Schema Documentation - https://microsoft.github.io/malmo/0.30.0/Schemas/MissionHandlers.html#SchemaProperties
+- Index page Minecraft Image - https://images-ext-2.discordapp.net/external/6BF6DzNVG143Fw7lkTALGRoUZasb8HKdEt1zrF1kxHo/https/cdn.mos.cms.futurecdn.net/m3WrriWje4hvzFBpALojFm-970-80.jpg.webp
