@@ -25,7 +25,7 @@ class DiamondCollector(gym.Env):
         self.size = 50
         self.reward_density = .1
         self.penalty_density = .02
-        self.obs_size = 4 #changed from 5
+        self.obs_size = 5
         self.max_episode_steps = 100
         self.log_frequency = 10
         self.action_dict = {
@@ -37,7 +37,8 @@ class DiamondCollector(gym.Env):
 
         # Rllib Parameters
         self.action_space = Discrete(len(self.action_dict)) #BACK TO DISCRETE FOR FINAL REPORT
-        self.observation_space = Box(-1000, 1000, shape=(self.obs_size,), dtype=np.float32) # Not sure what to do here
+        #self.observation_space = Box(-1000, 1000, shape=(self.obs_size,), dtype=np.float32) # Not sure what to do here
+        self.observation_space = Box(0, 1, shape=(self.obs_size * self.obs_size, ), dtype=np.float32)
 
         # Malmo Parameters
         self.agent_host = MalmoPython.AgentHost()
@@ -131,6 +132,8 @@ class DiamondCollector(gym.Env):
  
     def get_mission_xml(self):
 
+        map = randint(0, 4)
+
         return '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
@@ -147,7 +150,7 @@ class DiamondCollector(gym.Env):
                             <Weather>clear</Weather>
                         </ServerInitialConditions>
                         <ServerHandlers>
-                            <FileWorldGenerator src="C:\\Users\\zerom\\Desktop\\Malmo\\Minecraft\\run\\saves\\New World"/>
+                            <FileWorldGenerator src="C:\\Users\\zerom\\Desktop\\Malmo\\Minecraft\\run\\saves\\New World'''+str(map)+'''"/>
                             <DrawingDecorator>''' + \
                                 "<DrawCuboid x1='-648' x2='-648' y1='3' y2='3' z1='-89' z2='-85' type='stone'/>" + \
                                 "<DrawCuboid x1='-648' x2='-648' y1='4' y2='4' z1='-89' z2='-85' type='lava'/>" + \
@@ -175,6 +178,12 @@ class DiamondCollector(gym.Env):
                             <DiscreteMovementCommands/>
                             <ObservationFromFullStats/>
                             <ObservationFromRay/>
+                            <ObservationFromGrid>
+                                <Grid name="floorAll">
+                                    <min x="'''+str(int(self.obs_size/2))+'''" y="-1" z="-'''+str(int(self.obs_size/2))+'''"/>
+                                    <max x="'''+str(int(self.obs_size/2))+'''" y="-1" z="'''+str(int(self.obs_size/2))+'''"/>
+                                </Grid>
+                            </ObservationFromGrid>
                             <AgentQuitFromReachingCommandQuota description="found_goal" total="'''+str(self.max_episode_steps)+'''" />
                             <AgentQuitFromTouchingBlockType>
                                 <Block type="emerald_block" />
@@ -227,8 +236,7 @@ class DiamondCollector(gym.Env):
         Returns
             observation: <np.array> the state observation
         """
-        obs = np.zeros(self.obs_size)
-        allow_break_action = False
+        obs = np.zeros((self.obs_size * self.obs_size, ))
 
         while world_state.is_mission_running:
             time.sleep(0.4)
@@ -241,18 +249,23 @@ class DiamondCollector(gym.Env):
                 msg = world_state.observations[-1].text
                 observations = json.loads(msg)
 
-                # New Observation (final report)
-                obs[0] = (-observations['XPos'] - self.xstart) / (self.xend - self.xstart)
-                obs[1] = 0.0 # might not need this
-                obs[2] = (-observations['ZPos'] - self.zstart) / (self.zend - self.zstart)
-                yaw = observations['Yaw']
-                if yaw < -180:
-                    yaw += 360
-                if yaw > 180:
-                    yaw -= 360
-                yaw += 180
+                # New Observation (final report) changing back to GRID
+                grid = observations['floorAll']
+                for i, x in enumerate(grid):
+                    obs[i] = x == 'diamond_block'
+                    if x == 'lava':
+                        obs[i] = -1
+                
+                #print(obs)
 
-                obs[3] = yaw / 360
+                # yaw = observations['Yaw']
+                # if yaw < -180:
+                #     yaw += 360
+                # if yaw > 180:
+                #     yaw -= 360
+                # yaw += 180
+
+                # obs[3] = yaw / 360
 
                 # Rotate observation with orientation of agent
                 # obs = obs.reshape((2, self.obs_size, self.obs_size))
