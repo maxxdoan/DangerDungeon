@@ -4,6 +4,8 @@ title: Final Report
 ---
 
 ## Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m_dbPTm5x70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  
 ## Project Summary
 Our project will involve training an agent to navigate a environment filled with dangerous traps and obstacles to overcome. The agent's goal is safely walk through an environment filled with hot lava and numerous traps. The map design includes different paths the agent can take with different consequences and results. Pressure plates are planted in the environment to allow our agent to make it across the lava safetly. The catch is, some of the pressure plates create a path across the dangerous lava and some do nothing to help. The helpful pressure plates will be labeled with strips of diamond blocks. We wanted to challenge our agent by changing up which pressure plates would help him during his missions. These changes can be visually seen by the changing locations of the diamond strips. We created 4 different map variations that can be seen below.
