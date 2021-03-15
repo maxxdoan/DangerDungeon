@@ -47,5 +47,11 @@ Change back to discrete from continous and the removal of walking backward
 
 
 ## Evaluation
+The agent will receive one point each time he is one step closer to the goal, and if he falls into the lava, he will die immediately and consequently fail the misson. The experiment will be conduct by letting the agent finds his way through 4 different maps, which is chosen randomly. 
+- For the first experiment with only one map, we can see that the agent learned much more faster and more effectively. 
+- For the second with 4 maps chosen randomly, we can see a slight increase in reaward overtime but the agent learn much slower and less effectively.
+
+Result Graph
+![](finalGraph.png)
 
 ## References
